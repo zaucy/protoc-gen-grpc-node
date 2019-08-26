@@ -1,0 +1,13 @@
+"""
+"""
+load("@com_github_zaucy_protoc_gen_grpc_node//:defs.bzl", "ts_grpc_proto_library")
+
+proto_library(
+    name = "echo_proto",
+    srcs = ["echo.proto"],
+)
+
+ts_grpc_proto_srcs(
+    name = "echo_grpc_proto",
+
+)

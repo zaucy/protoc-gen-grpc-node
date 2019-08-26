@@ -1,0 +1,16 @@
+cc_binary(
+    name = "protoc-gen-grpc-node",
+    visibility = ["//visibility:public"],
+    srcs = [
+        "src/main.cc",
+        "src/grpc-node-generator-options.cc",
+        "src/grpc-node-generator-options.hh",
+        "src/grpc-node-generator.cc",
+        "src/grpc-node-generator.hh",
+        "src/grpc-node-generator-utils.hh",
+        "src/grpc-node-generator-utils.cc",
+    ],
+    deps = [
+        "@com_google_protobuf//:protoc_lib",
+    ],
+)
