@@ -10,6 +10,8 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    strip_prefix = "protobuf-3.7.1",
-    urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-all-3.7.1.tar.gz"],
+    strip_prefix = "protobuf-3.10.0",
+    urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v3.10.0/protobuf-all-3.10.0.tar.gz"],
 )
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+protobuf_deps()
