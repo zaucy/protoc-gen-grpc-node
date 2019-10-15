@@ -212,7 +212,7 @@ namespace GrpcNodeGeneratorUtils {
       split(location.leading_comments, '\n', out);
     } else if (type == COMMENTTYPE_LEADING_DETACHED) {
       auto detachedCommentsSize = location.leading_detached_comments.size();
-      for(auto i=0; i < detachedCommentsSize; ++i) {
+      for(std::size_t i=0; i < detachedCommentsSize; ++i) {
         split(location.leading_detached_comments[i], '\n', out);
         out->push_back("");
       }
