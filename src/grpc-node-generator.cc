@@ -168,13 +168,14 @@ bool GrpcNodeGenerator::PrintMessageTransformer
   vars["NodeName"] = utils::nodeObjectPath(descriptor);
 
   // Print the serializer
-  printer.Print(vars, "function serialize_$identifierName$(arg: any): any {\n");
+  printer.Print(vars, "function serialize_$identifierName$(arg: $NodeName$): any {\n");
   printer.Indent();
-  printer.Print(vars, "if (!(arg instanceof $NodeName$)) {\n");
-  printer.Indent();
-  printer.Print(vars, "throw new Error('Expected argument of type $name$');\n");
-  printer.Outdent();
-  printer.Print("}\n");
+  // printer.Print(vars, "if (!(arg instanceof $NodeName$)) {\n");
+  // printer.Indent();
+  // printer.Print(vars, "throw new Error('Expected argument of type $name$');\n");
+  // printer.Outdent();
+  // printer.Print("}\n");
+  // printer.Print("console.trace(arg);\n");
   printer.Print("return Buffer.from(arg.serializeBinary());\n");
   printer.Outdent();
   printer.Print("}\n\n");
